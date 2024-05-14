@@ -7,12 +7,20 @@ def devine():
     while devine != nombre:
         devine = int(input())
         if devine < nombre:
-            print("Plus grand")
+            if nombre - devine > 10:
+                print("Tu gèles")
+            elif nombre - devine > 5:
+                print("Tu refroidis")
+            else:
+                print("Tu chauffes")
         elif devine > nombre:
-            print("Plus petit")
-    print
+            if devine - nombre > 10:
+                print("Tu gèles")
+            elif devine - nombre > 5:
+                print("Tu refroidis")
+            else:
+                print("Tu chauffes")
     print("Bravo! Tu as deviné le nombre.")
-    print
+    print()
 
 devine()
-
