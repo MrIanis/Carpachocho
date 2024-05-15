@@ -95,6 +95,7 @@ def print_board(board: dict[int, int], n: int):
             else:
                 row += ". "
         print(row)
+    print()
 
 while True:
     board = generate_board(n)
