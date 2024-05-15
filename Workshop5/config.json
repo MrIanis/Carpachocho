@@ -1,0 +1,5 @@
+[
+    {"src": "/chemin/vers/fichier1.txt", "dst": "fichier1.txt"},
+    {"src": "/chemin/vers/dossier1", "dst": "dossier1_sauvegarde"}
+  ]
+  
