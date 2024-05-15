@@ -84,7 +84,24 @@ correct_board = {
     20: 0, 21: 0, 22: 0, 23: 0, 24: 1 
 }
 
-if validate_board(correct_board, n):
-    print("Cette configuration est correcte !")
-else:
-    print("Incorrect...")
+
+def print_board(board: dict[int, int], n: int):
+    """Affiche l'échiquier sous forme de grille"""
+    for i in range(n):
+        row = ""
+        for j in range(n):
+            if board[grid_coords_to_list_index(i, j, n)] == 1:
+                row += "Q "
+            else:
+                row += ". "
+        print(row)
+
+while True:
+    board = generate_board(n)
+    if validate_board(board, n):
+        print_board(board, n)
+        print("Cette configuration est correcte !")
+        break
+    else:
+        print_board(board, n)
+        print("Incorrect... Nouvelle tentative.")
