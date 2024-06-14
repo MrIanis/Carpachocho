@@ -65,11 +65,9 @@ while tentatives > 0:
           # Sinon, on affiche un underscore
           affichage += "_ "
 
-  # Si il n'y a plus d'underscores dans le mot à deviner, c'est que le joueur a gagné
   if "_" not in affichage:
       print("=> Gagné! <=\n")
       break
 
-# Si le joueur n'a plus de tentatives, on affiche un message de fin de partie
 print("\n    - Fin de la partie -    ")
 print("La solution était :", solution)
