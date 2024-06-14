@@ -24,4 +24,27 @@ def backup_files(config_file):
     if not os.path.isdir(backup_dir):
         os.makedirs(backup_dir)
 
+    for item in config:
+        src = item['src']
+        dst = os.path.join(backup_dir, item['dst'])
+
+        try:
+            if os.path.isdir(src):
+                shutil.copytree(src, dst)
+                print(f"Le répertoire {src} a été sauvegardé vers {dst}.")
+            elif os.path.isfile(src):
+                shutil.copy2(src, dst)
+                print(f"Le fichier {src} a été sauvegardé vers {dst}.")
+            else:
+                print(f"Le chemin {src} n'existe pas.")
+        except PermissionError:
+            print(f"Vous n'avez pas les permissions pour accéder à {src}.")
+        except Exception as e:
+            print(f"Une erreur est survenue lors de la sauvegarde de {src} vers {dst} : {e}")
+
+# Exemple d'utilisation
+config_file = 'config.json'
+backup_files(config_file)
+
+
         
