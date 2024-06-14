@@ -47,7 +47,7 @@ while tentatives > 0:
     if tentatives<=3:
         print(" ||       /|\ ")
     if tentatives<=4:
-        print(" ||       /|  ")
+        print(" ||       /|\  ")
     if tentatives<=5:
         print("/||           ")
     if tentatives<=6:
